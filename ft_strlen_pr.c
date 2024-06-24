@@ -6,7 +6,7 @@
 /*   By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 08:49:57 by tursescu          #+#    #+#             */
-/*   Updated: 2024/06/21 10:30:27 by tursescu         ###   ########.fr       */
+/*   Updated: 2024/06/24 08:50:03 by tursescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen_pr(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
