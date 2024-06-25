@@ -6,7 +6,7 @@
 #    By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 15:59:46 by tursescu          #+#    #+#              #
-#    Updated: 2024/06/24 09:20:07 by tursescu         ###   ########.fr        #
+#    Updated: 2024/06/24 18:14:04 by tursescu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 clean:
 	$(RM) $(OBJS)
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 re: fclean $(NAME)
 .PHONY: all clean fclean re

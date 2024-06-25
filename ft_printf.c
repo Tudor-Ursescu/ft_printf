@@ -6,14 +6,14 @@
 /*   By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:17:57 by tursescu          #+#    #+#             */
-/*   Updated: 2024/06/24 11:12:05 by tursescu         ###   ########.fr       */
+/*   Updated: 2024/06/25 09:45:57 by tursescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static int	what_flags(const char *string, int i, va_list args)
+static int	what_format(const char *string, int i, va_list args)
 {
 	int	length;
 
@@ -36,6 +36,8 @@ static int	what_flags(const char *string, int i, va_list args)
 		length += ft_putptr_pr(va_arg(args, void *));
 	else if (string[i] == '%')
 		length += ft_putchar_pr('%');
+	else
+		length += ft_putchar_pr('%');
 	return (length);
 }
 
@@ -53,23 +55,18 @@ int	ft_printf(const char *string, ...)
 		if (string[i] == '%')
 		{
 			i++;
-			length += what_flags(string, i, args);
+			if (string[i] == '\0')
+				break ;
+			length += what_format(string, i, args);
 		}
-		else
-			length += ft_putchar_pr(string[i]);
+		length += ft_putchar_pr(string[i]);
 		i++;
 	}
 	va_end(args);
 	return (length);
 }
 
-// #include <stdio.h>
-
-// int main() {
-//     ft_printf("Hello %s!\n", "World");
-//     ft_printf("Number: %d\n", 42);
-// 	ft_printf("Number: %i\n", 42);
-//     ft_printf("Character: %c\n", 'A');
-// 	printf("unsigned: %u", 255);
-//     return (0);
-// }
+/*
+- the else in the what_descritor function makes it so that the function just prints the '%'
+and whatever comes afterwards if what follows afte
+*/
