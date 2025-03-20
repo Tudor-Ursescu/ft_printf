@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pr.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_pr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 08:57:59 by tursescu          #+#    #+#             */
-/*   Updated: 2024/06/21 10:40:17 by tursescu         ###   ########.fr       */
+/*   Created: 2024/06/21 08:29:41 by tursescu          #+#    #+#             */
+/*   Updated: 2025/03/20 13:18:21 by tursescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_putchar_pr(char c)
+int	ft_putstr_pr(char *s)
 {
-	write(1, &c, 1);
-	return (1);
-}
+	int	i;
+	int	len;
 
-/*
--return 1 as int length of char == 1;
-*/
+	i = 0;
+	len = 0;
+	if (s == NULL)
+		return (ft_putstr_pr("(null)"));
+	while (s[i])
+	{
+		ft_putchar_pr(s[i]);
+		i++;
+		len++;
+	}
+	return (len);
+}

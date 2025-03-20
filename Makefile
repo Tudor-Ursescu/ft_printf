@@ -6,17 +6,17 @@
 #    By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 15:59:46 by tursescu          #+#    #+#              #
-#    Updated: 2024/06/24 18:14:04 by tursescu         ###   ########.fr        #
+#    Updated: 2025/03/20 13:17:04 by tursescu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c ft_putchar_pr.c ft_putnbr_pr.c ft_strlen_pr.c\
-		ft_putstr_pr.c ft_puthex_pr.c ft_print_unsigned.c\
-		ft_putptr_pr.c
+SRCS = src/ft_printf.c src/ft_putchar_pr.c src/ft_putnbr_pr.c src/ft_strlen_pr.c\
+		src/ft_putstr_pr.c src/ft_puthex_pr.c src/ft_print_unsigned.c\
+		src/ft_putptr_pr.c
 
 NAME = libftprintf.a
 
-INCL = ft_printf.h
+INCL = includes/ft_printf.h
 
 OBJS := $(SRCS:.c=.o)
 

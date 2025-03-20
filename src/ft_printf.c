@@ -6,11 +6,11 @@
 /*   By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 17:17:57 by tursescu          #+#    #+#             */
-/*   Updated: 2024/06/25 09:45:57 by tursescu         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:37:36 by tursescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 #include <stdio.h>
 
 static int	what_format(const char *string, int i, va_list args)
@@ -36,8 +36,8 @@ static int	what_format(const char *string, int i, va_list args)
 		length += ft_putptr_pr(va_arg(args, void *));
 	else if (string[i] == '%')
 		length += ft_putchar_pr('%');
-	else
-		length += ft_putchar_pr('%');
+	// else
+	// 	length += ft_putchar_pr(string[i]);
 	return (length);
 }
 
@@ -59,7 +59,8 @@ int	ft_printf(const char *string, ...)
 				break ;
 			length += what_format(string, i, args);
 		}
-		length += ft_putchar_pr(string[i]);
+		else
+			length += ft_putchar_pr(string[i]);
 		i++;
 	}
 	va_end(args);

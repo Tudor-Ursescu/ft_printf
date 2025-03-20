@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr_pr.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_pr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tursescu <tursescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 08:58:46 by tursescu          #+#    #+#             */
-/*   Updated: 2024/06/24 09:10:42 by tursescu         ###   ########.fr       */
+/*   Created: 2024/06/20 08:57:59 by tursescu          #+#    #+#             */
+/*   Updated: 2025/03/20 13:18:13 by tursescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_putptr_pr(void *ptr)
+int	ft_putchar_pr(char c)
 {
-	int	i;
-
-	i = 0;
-	if (ptr == 0)
-		return (ft_putstr_pr("(nil)"));
-	i += ft_putstr_pr("0x");
-	i += ft_puthex_pr((unsigned long)ptr, "0123456789abcdef");
-	return (i);
+	write(1, &c, 1);
+	return (1);
 }
+
+/*
+-return 1 as int length of char == 1;
+*/
